@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Dice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #dice {
+            font-size: 200px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004080;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Rolling Dice</h1>
+    <h2 id="diceresult">Roll the dice</h2>
+    <button onclick="rolldice()">Roll!</button>
+    <div id="dice"></div>
+
+    <script>
+        function rolldice() {
+            // Unicode characters for dice faces
+            var dices = ['&#9856;', '&#9857;', '&#9858;', '&#9859;', '&#9860;', '&#9861;'];
+
+            // Generate a random number between 0 and 5 (to match the array index)
+            var dicevalue = Math.floor(Math.random() * 6);
+
+            // Update the text result
+            document.getElementById("diceresult").innerText = "You Rolled: " + (dicevalue + 1);
+
+            // Update the dice symbol
+            document.getElementById("dice").innerHTML = dices[dicevalue];
+        }          
+    </script>
+</body>
+
+</html>
